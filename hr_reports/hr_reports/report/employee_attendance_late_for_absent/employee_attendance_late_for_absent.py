@@ -4,6 +4,10 @@
 import frappe
 
 def execute(filters=None):
+    # Ensure filters is always a dict
+    if not filters:
+        filters = {}
+
     # Define the order of months
     months_order = [
         'January', 'February', 'March', 'April', 'May', 'June',

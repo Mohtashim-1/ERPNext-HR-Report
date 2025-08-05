@@ -122,13 +122,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Employee Attendance": {
+		"on_update": "hr_reports.hr_reports.doctype.employee_attendance.employee_attendance.uncheck_absent_checkbox_when_mark_leave_is_checked"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
