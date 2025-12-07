@@ -124,7 +124,8 @@ app_license = "mit"
 
 doc_events = {
 	"Employee Attendance": {
-		"on_update": "hr_reports.hr_reports.doctype.employee_attendance.employee_attendance.uncheck_absent_checkbox_when_mark_leave_is_checked"
+		"on_update": "hr_reports.hr_reports.doctype.employee_attendance.employee_attendance.uncheck_absent_checkbox_when_mark_leave_is_checked",
+		"validate": "hr_reports.hr_reports.doctype.employee_attendance.employee_attendance.handle_security_guard_joining_date"
 	}
 }
 
