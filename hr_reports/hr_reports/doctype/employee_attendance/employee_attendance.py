@@ -13,7 +13,7 @@ def uncheck_absent_checkbox_when_mark_leave_is_checked(doc, method):
 
 def handle_security_guard_joining_date(doc, method):
     """
-    For Security Guards: If employee joins mid-month, mark days before joining date
+    For Security Guards and Gate Keepers: If employee joins mid-month, mark days before joining date
     as manual_absent instead of absent (so salary is not cut for those days)
     """
     if not doc.employee:
@@ -22,7 +22,7 @@ def handle_security_guard_joining_date(doc, method):
     # Get employee designation
     designation = frappe.db.get_value("Employee", doc.employee, "designation")
     
-    if designation != "Security Guard":
+    if designation not in ["Security Guard", "GATE KEEPER"]:
         return
     
     # Get employee joining date
